@@ -228,7 +228,7 @@ export const servicesData: Service[] = [
     description:
       "Planning and execution of high-quality building construction projects.",
     category: "Construction",
-    image: IMAGES.services[0],
+    image: IMAGES.services[0]!,
     active: true,
   },
   {
@@ -237,7 +237,7 @@ export const servicesData: Service[] = [
     description:
       "Development and construction solutions for modern residential spaces.",
     category: "Residential",
-    image: IMAGES.services[1],
+    image: IMAGES.services[1]!,
     active: true,
   },
   {
@@ -246,7 +246,7 @@ export const servicesData: Service[] = [
     description:
       "Professional commercial construction solutions with a focus on functionality and quality.",
     category: "Commercial",
-    image: IMAGES.services[2],
+    image: IMAGES.services[2]!,
     active: true,
   },
   {
@@ -254,7 +254,7 @@ export const servicesData: Service[] = [
     title: "Real Estate Development",
     description: "End-to-end real estate development and project execution.",
     category: "Real Estate",
-    image: IMAGES.services[3],
+    image: IMAGES.services[3]!,
     active: true,
   },
   {
@@ -263,7 +263,7 @@ export const servicesData: Service[] = [
     description:
       "Strategic planning and project management for construction initiatives.",
     category: "Planning",
-    image: IMAGES.services[4],
+    image: IMAGES.services[4]!,
     active: true,
   },
   {
@@ -271,7 +271,7 @@ export const servicesData: Service[] = [
     title: "Infrastructure Solutions",
     description: "Reliable construction and infrastructure-focused execution.",
     category: "Infrastructure",
-    image: IMAGES.services[5],
+    image: IMAGES.services[5]!,
     active: true,
   },
 ];
@@ -286,8 +286,8 @@ export const projectsData: Project[] = [
     status: "Ongoing",
     description:
       "A contemporary residential development designed around light, ventilation and efficient planning, offering well-proportioned homes with premium common amenities.",
-    cover: IMAGES.projects[0],
-    gallery: [IMAGES.gallery[0], IMAGES.gallery[3], IMAGES.gallery[5]],
+    cover: IMAGES.projects[0]!,
+    gallery: [IMAGES.gallery[0]!, IMAGES.gallery[3]!, IMAGES.gallery[5]!],
     active: true,
   },
   {
@@ -299,8 +299,8 @@ export const projectsData: Project[] = [
     status: "Planning",
     description:
       "A commercial address built for modern businesses — flexible floor plates, strong structural engineering and a facade that signals corporate credibility.",
-    cover: IMAGES.projects[1],
-    gallery: [IMAGES.gallery[1], IMAGES.gallery[6], IMAGES.gallery[8]],
+    cover: IMAGES.projects[1]!,
+    gallery: [IMAGES.gallery[1]!, IMAGES.gallery[6]!, IMAGES.gallery[8]!],
     active: true,
   },
   {
@@ -312,8 +312,8 @@ export const projectsData: Project[] = [
     status: "Ongoing",
     description:
       "A refined residential project focused on durable construction quality, thoughtful layouts and calm, landscaped surroundings.",
-    cover: IMAGES.projects[2],
-    gallery: [IMAGES.gallery[2], IMAGES.gallery[4], IMAGES.gallery[7]],
+    cover: IMAGES.projects[2]!,
+    gallery: [IMAGES.gallery[2]!, IMAGES.gallery[4]!, IMAGES.gallery[7]!],
     active: true,
   },
   {
@@ -325,8 +325,8 @@ export const projectsData: Project[] = [
     status: "Upcoming",
     description:
       "A mixed-use development combining retail, workspace and residences into a single, walkable urban environment.",
-    cover: IMAGES.projects[3],
-    gallery: [IMAGES.gallery[5], IMAGES.gallery[0], IMAGES.gallery[6]],
+    cover: IMAGES.projects[3]!,
+    gallery: [IMAGES.gallery[5]!, IMAGES.gallery[0]!, IMAGES.gallery[6]!],
     active: true,
   },
 ];
@@ -353,7 +353,7 @@ export const galleryData: GalleryItem[] = IMAGES.gallery.map((image, i) => ({
       "Living Spaces",
       "City Infrastructure",
     ][i] ?? `Gallery ${i + 1}`,
-  category: galleryCategories[i % galleryCategories.length],
+  category: galleryCategories[i % galleryCategories.length]!,
   image,
   active: true,
 }));
@@ -366,7 +366,7 @@ export const testimonialsData: Testimonial[] = [
     review:
       "Disciplined planning and clear communication throughout. The team treated our timeline and budget with genuine respect.",
     rating: 5,
-    image: IMAGES.testimonials[0],
+    image: IMAGES.testimonials[0]!,
     active: true,
   },
   {
@@ -376,7 +376,7 @@ export const testimonialsData: Testimonial[] = [
     review:
       "Quality of finishing and structural work exceeded expectations. A professional outfit that understands Pune's market.",
     rating: 5,
-    image: IMAGES.testimonials[1],
+    image: IMAGES.testimonials[1]!,
     active: true,
   },
   {
@@ -386,7 +386,7 @@ export const testimonialsData: Testimonial[] = [
     review:
       "Transparent, responsive and detail-oriented. We would confidently work with Prospera Arcon on future developments.",
     rating: 4,
-    image: IMAGES.testimonials[2],
+    image: IMAGES.testimonials[2]!,
     active: true,
   },
 ];
