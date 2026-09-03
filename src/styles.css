@@ -142,3 +142,174 @@
     color: var(--color-foreground);
   }
 }
+
+/* ===== Prospera Arcon LLP design system ===== */
+:root {
+  --navy: oklch(0.28 0.072 254);
+  --navy-deep: oklch(0.22 0.062 254);
+  --gold: oklch(0.71 0.117 79);
+  --gold-soft: oklch(0.82 0.086 81);
+  --slate-blue: oklch(0.44 0.045 245);
+  --charcoal: oklch(0.28 0.014 251);
+  --light: oklch(0.975 0.003 248);
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.28 0.014 251);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.28 0.014 251);
+  --primary: oklch(0.28 0.072 254);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.975 0.003 248);
+  --secondary-foreground: oklch(0.28 0.072 254);
+  --muted: oklch(0.975 0.003 248);
+  --muted-foreground: oklch(0.52 0.02 250);
+  --accent: oklch(0.71 0.117 79);
+  --accent-foreground: oklch(0.22 0.062 254);
+  --border: oklch(0.9 0.008 248);
+  --input: oklch(0.9 0.008 248);
+  --ring: oklch(0.71 0.117 79);
+  --radius: 0.25rem;
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-slate-blue: var(--slate-blue);
+  --color-charcoal: var(--charcoal);
+  --color-light: var(--light);
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+}
+
+@utility container-x {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+  @media (min-width: 1024px) {
+    padding-inline: 2rem;
+  }
+}
+
+@utility btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.6rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+@utility btn-gold {
+  @apply btn-base;
+  background: var(--gold);
+  color: var(--navy-deep);
+  &:hover {
+    background: var(--gold-soft);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px -12px color-mix(in oklab, var(--gold) 70%, transparent);
+  }
+}
+
+@utility btn-navy {
+  @apply btn-base;
+  background: var(--navy);
+  color: oklch(0.99 0 0);
+  &:hover {
+    background: var(--navy-deep);
+    transform: translateY(-2px);
+  }
+}
+
+@utility btn-outline-light {
+  @apply btn-base;
+  border-color: color-mix(in oklab, white 60%, transparent);
+  color: oklch(0.99 0 0);
+  &:hover {
+    background: color-mix(in oklab, white 14%, transparent);
+  }
+}
+
+@utility btn-outline-navy {
+  @apply btn-base;
+  border-color: var(--navy);
+  color: var(--navy);
+  &:hover {
+    background: var(--navy);
+    color: oklch(0.99 0 0);
+  }
+}
+
+@utility eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+@utility card-elevated {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  &:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in oklab, var(--gold) 55%, transparent);
+    box-shadow: 0 24px 45px -30px color-mix(in oklab, var(--navy) 60%, transparent);
+  }
+}
+
+@utility section-pad {
+  padding-block: 5rem;
+  @media (min-width: 1024px) {
+    padding-block: 7rem;
+  }
+}
+
+@utility reveal-hidden {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+@utility reveal-shown {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+@utility img-zoom {
+  overflow: hidden;
+  & img {
+    transition: transform 0.7s ease;
+  }
+  &:hover img {
+    transform: scale(1.07);
+  }
+}
