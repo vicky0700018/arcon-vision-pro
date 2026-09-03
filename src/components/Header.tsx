@@ -49,7 +49,7 @@ export function Header() {
             <Link
               key={item.label}
               to={item.to}
-              hash={"hash" in item ? item.hash : undefined}
+              {..."hash" in item && item.hash ? { hash: item.hash } : {}}
               className="text-[0.78rem] font-semibold tracking-[0.14em] text-white/75 uppercase transition-colors hover:text-gold"
               activeOptions={{ exact: item.to === "/" }}
               activeProps={{ className: "text-gold" }}
@@ -88,7 +88,7 @@ export function Header() {
               <Link
                 key={item.label}
                 to={item.to}
-                hash={"hash" in item ? item.hash : undefined}
+                {..."hash" in item && item.hash ? { hash: item.hash } : {}}
                 onClick={() => setOpen(false)}
                 className="border-b border-white/5 py-3 text-sm font-semibold tracking-[0.12em] text-white/80 uppercase"
               >
